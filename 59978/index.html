@@ -13,14 +13,23 @@
 </audio>
 
 <script>
-    // 获取音频元素
-    var audio = document.getElementById("myAudio");
+  // 获取音频元素
+  var audio = document.getElementById("myAudio");
 
-    // 设置页面的点击事件监听器
-    document.body.addEventListener("click", function() {
-        // 播放音频
-        audio.play();
-    });
+  // 定义一个变量来跟踪播放状态
+  var isPlaying = false;
+
+  // 设置页面的点击事件监听器
+  document.body.addEventListener("click", function() {
+      // 根据当前播放状态切换播放或暂停
+      if (isPlaying) {
+          audio.pause();
+      } else {
+          audio.play();
+      }
+      // 反转播放状态
+      isPlaying = !isPlaying;
+  });
 </script>
 <!-- partial:index.partial.html -->
 <!-- <a href="https://codepen.io/uiswarup/full/yLwNOqX" target="_blank"> -->
